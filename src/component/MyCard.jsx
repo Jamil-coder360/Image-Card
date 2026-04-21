@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const MyCard = () => {
   const fileRef = useRef();
-  const { item, addCard } = useContext(CardContext);
+  const { item, addCard, deleteCard , deleteAll } = useContext(CardContext);
   const [text, setText] = useState("");
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
@@ -77,7 +77,7 @@ const MyCard = () => {
         <div className="flex flex-col flex-wrap gap-6 justify-center mt-20">
             <div className="flex items-center justify-between">
                 <h3 className="text-white text-3xl font-bold">total card : {item?.length || 0}</h3>
-                <Button>
+                <Button onClick={deleteAll}>
                     Delete All
                 </Button>
             </div>
@@ -118,7 +118,7 @@ const MyCard = () => {
                   <Button className="text-xs  px-4 py-1.5 rounded-full hover:bg-gray-100 hover:text-black hover:border transition-colors">
                     Edit
                   </Button>
-                  <Button className="text-xs bg-red-400 text-white px-4 py-1.5 rounded-full hover:bg-red-600 transition-colors">
+                  <Button onClick={() => deleteCard(i)} className="text-xs bg-red-400 text-white px-4 py-1.5 rounded-full hover:bg-red-600 transition-colors">
                     delete
                   </Button>
                 </div>

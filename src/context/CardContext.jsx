@@ -8,7 +8,13 @@ const CardProvider = ({ children }) => {
         setItem([...item, {text ,title, image}]);
         console.log(item);
     };
-    return (<CardContext.Provider value={{ item ,addCard }}>
+    const deleteCard =(id) =>{
+        setItem(item.filter((_, i) => i !== id));
+    }
+    const deleteAll = ()=>{
+        setItem([]);
+    }
+    return (<CardContext.Provider value={{ item ,addCard, deleteCard , deleteAll}}>
         {children}
     </CardContext.Provider>
     );
