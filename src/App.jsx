@@ -1,5 +1,6 @@
 import React from 'react'
 import { toast } from 'react-toastify';
+import MyCard from './component/MyCard';
 
 const App = () => {
 
@@ -8,10 +9,7 @@ const App = () => {
 
     
    return (
-     <div className='bg-gray-200'>
-     
-     <button onClick={notify}>Notify!</button>
-     </div>
+<MyCard />
   )
 }
 
