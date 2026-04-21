@@ -8,7 +8,7 @@ const App = () => {
 
     
    return (
-     <div className='bg-gray-200'>App
+     <div className='bg-gray-200'>
      
      <button onClick={notify}>Notify!</button>
      </div>
